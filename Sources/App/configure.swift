@@ -7,7 +7,7 @@ public func configure(_ app: Application) throws {
     app.routes.defaultMaxBodySize = "500kb"
     app.routes.caseInsensitive = true
     let dir = DirectoryConfiguration.detect()
-    let path = dir.publicDirectory + "MyLibrary.doccarchive"
+    let path = dir.publicDirectory + "DocC.doccarchive"
     let url = URL.init(fileURLWithPath: path)
     app.middleware.use(VaporDocCMiddleware(archivePath: url))
     
