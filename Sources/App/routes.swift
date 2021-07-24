@@ -39,6 +39,12 @@ func routes(_ app: Application) throws {
         print("path of html: \(path)")
         return req.view.render(path)
     }
+    app.get("documentation") { req -> EventLoopFuture<View> in
+        let dir = DirectoryConfiguration.detect()
+        let path = dir.publicDirectory + "MyLibrary.doccarchive/index.html"
+        print("path of html: \(path)")
+        return req.view.render(path)
+    }
 }
 
 
