@@ -45,6 +45,24 @@ func routes(_ app: Application) throws {
         print("path of html: \(path)")
         return req.view.render(path)
     }
+    app.get("tamilselvan") { req -> EventLoopFuture<View> in
+        let dir = DirectoryConfiguration.detect()
+        let path = dir.publicDirectory + "tamilselvan.html"
+        print("path of html: \(path)")
+        return req.view.render(path)
+    }
+    app.get("vigneshvaran") { req -> EventLoopFuture<View> in
+        let dir = DirectoryConfiguration.detect()
+        let path = dir.publicDirectory + "vigneshvaran.html"
+        print("path of html: \(path)")
+        return req.view.render(path)
+    }
+    app.get("yogeswaran") { req -> EventLoopFuture<View> in
+        let dir = DirectoryConfiguration.detect()
+        let path = dir.publicDirectory + "yogeswaran.html"
+        print("path of html: \(path)")
+        return req.view.render(path)
+    }
     app.get("documentation") { req -> EventLoopFuture<View> in
         let dir = DirectoryConfiguration.detect()
         let path = dir.publicDirectory + "DocC.doccarchive/index.html"
